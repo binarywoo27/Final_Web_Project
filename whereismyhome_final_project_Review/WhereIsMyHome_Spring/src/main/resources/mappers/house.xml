@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.home.model.mapper.HouseMapper">
+
+	<select id="searchHouse" parameterType="HouseDto" resultType="Integer">
+		<![CDATA[
+			select count(*)
+			from househit
+			where roadCode = #{roadCode} and houseName = #{houseName};
+		]]>
+	</select>
+	
+	<select id="getHouseRank" resultType="HouseDto">
+		<![CDATA[
+			select roadCode, sidoName, gugunName, houseName, hit
+			from househit
+			order by hit desc
+			limit 10;
+		]]>	
+	</select>
+	
+	<insert id="addHouseHit" parameterType="HouseDto">
+		insert into househit(roadCode, sidoName, gugunName, houseName, hit)
+		values(#{roadCode}, #{sidoName}, #{gugunName}, #{houseName}, 1);
+	</insert>
+	
+	<update id="updateHouseHit" parameterType="HouseDto">
+		update househit
+		set hit = hit + 1
+		where roadCode = #{roadCode} and houseName = #{houseName};
+	</update>
+
+</mapper>
+

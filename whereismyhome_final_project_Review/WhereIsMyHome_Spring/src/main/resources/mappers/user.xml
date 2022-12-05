@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.home.model.mapper.UserMapper">
+
+	<select id="login" parameterType="userDto" resultType="userDto">
+		select name, id, address, phone
+		from users
+		where id = #{id} and password = #{password}
+	</select>
+	
+	<select id="userInfo" parameterType="string" resultType="userDto">
+		select name, id, address, phone
+		from users
+		where id = #{id}
+	</select>
+	
+	<select id="getRefreshToken" parameterType="string" resultType="string">
+		select token
+		from users
+		where id = #{id}
+	</select>
+	
+	<update id="saveRefreshToken" parameterType="map">
+		update users
+		set token = #{token}
+		where id = #{id}
+	</update>
+	
+	<update id="deleteRefreshToken" parameterType="map">
+		update users
+		set token = #{token, jdbcType=VARCHAR}
+		where id = #{id}
+	</update>
+	
+	<insert id="regist" parameterType="UserDto">
+		insert into users(id, password, name, address, phone)
+		values(#{id}, #{password}, #{name}, #{address}, #{phone})
+	</insert>
+	
+	<update id="update" parameterType="UserDto">
+		update users
+		set password = #{password}, address = #{address}, phone = #{phone}
+		where id = #{id}
+	</update>
+	
+	<delete id="delete" parameterType="UserDto">
+		delete
+		from users
+		where id = #{id}
+	</delete>
+	
+	<select id="check" parameterType="UserDto" resultType="UserDto">
+		select *
+		from users
+		where id = #{id} and phone = #{phone}
+	</select>
+	
+	<update id="resetPw" parameterType="UserDto">
+		update users
+		set password = #{password}
+		where id = #{id}
+	</update>
+</mapper>

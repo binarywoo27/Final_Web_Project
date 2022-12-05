@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.home.model.mapper.FavoriteMapper">
+
+	<select id="getFavoriteList" resultType="FavoriteDto" parameterType="String">
+		<![CDATA[
+			select sidoCode, gugunCode, id, sido, gugun
+			from favorites
+			where id = #{id};
+		]]>
+	</select>
+	
+	<insert id="addFavorite" parameterType="FavoriteDto">
+		insert into favorites(sidoCode, gugunCode, id, sido, gugun) values
+		(#{sidoCode}, #{gugunCode}, #{id}, #{sido}, #{gugun});
+	</insert>
+	
+	<delete id="delFavorite" parameterType="FavoriteDto">
+		delete from favorites
+		where gugunCode = #{gugunCode} and id = #{id};
+	</delete>
+
+</mapper>
+
