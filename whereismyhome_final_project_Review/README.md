@@ -1,6 +1,15 @@
-# WhereIsMyHome FinalPJT 구미 05반 양동기 이진우 전상하
+### 🎤 서비스 소개: 
 
-시연동영상 : <a href="https://youtu.be/jqtivDjYCYs"> SSAFY_ESTATE </a>  ← 클릭!!
+서비스명: SSAFY_ESTATE <br/>
+
+누구나 쉽게 부동산 거래 정보를 조회하고, <br/>
+주변 편의시설을 카카오맵을 활용하여 찾아보고, <br/>
+실시간 아파트 관련 뉴스를 열람할 수 있으며, <br/>
+회원관리, 게시판 관리가 가능한 부동산 정보 조회 플랫폼입니다. 
+
+### 💻 팀원: 이진우, 양동기, 전상하 
+
+### 🎞️ 시연동영상 : <a href="https://youtu.be/jqtivDjYCYs"> SSAFY_ESTATE </a>  ← 클릭!!
 
 ## 1 메인 화면
 
