@@ -11,6 +11,15 @@
 
 ### 🎞️ 시연동영상 : <a href="https://youtu.be/jqtivDjYCYs"> SSAFY_ESTATE </a>  ← 클릭!!
 
+### 프로젝트 실행 방법 :
+1. git repo를 clone 받아 프로젝트를 다운로드 받는다. 
+2. (프런트엔드 실행) 
+    + 파일 탐색기로 whereismyhome_vue를 폴더를 연다 > 빈공간에 우클릭 > code로 열기 > terminal을 cmd모드로 연다 > npm install 입력 후 엔터(npm 모듈 설치) > npm run serve 입력 후 엔터
+      (vue 프로그램 실행)
+3. (백엔드 서버 실행)
+    + STS로 WhereIsMyHome_Spring 프로젝트를 import하여 연다 > 프로젝트명 우클릭 > run as > Spring Boot App 클릭 \
+    (로컬 서버 프로그램 실행) 
+
 ## 1 메인 화면
 
 ### 1-1 초기 메인화면
